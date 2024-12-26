@@ -1,66 +1,104 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<header>
+        <h1>Portfolio-Core</h1>
+        <p>A powerful and flexible portfolio management system</p>
+    </header>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+    <section>
+        <h2>Features</h2>
+        <ul>
+            <li><strong>Responsive Design</strong>: The website is fully responsive, ensuring it looks great on all devices.</li>
+            <li><strong>Dynamic Content</strong>: Easily update your portfolio items, projects, and achievements.</li>
+            <li><strong>User Authentication</strong>: Secure login and registration functionality for administrators.</li>
+            <li><strong>Admin Dashboard</strong>: Manage your portfolio items, sections, and users from an intuitive dashboard.</li>
+            <li><strong>Customizable Sections</strong>: Flexible design to showcase your work, experience, skills, and contact information.</li>
+        </ul>
+    </section>
 
-## About Laravel
+    <section>
+        <h2>Installation</h2>
+        <h3>Prerequisites</h3>
+        <ul>
+            <li>PHP 8.1 or higher</li>
+            <li>Composer</li>
+            <li>Laravel 10.x</li>
+            <li>MySQL or SQLite database</li>
+        </ul>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+        <h3>Clone the Repository</h3>
+        <pre>
+git clone https://github.com/yourusername/portfolio-core.git
+        </pre>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+        <h3>Install Dependencies</h3>
+        <pre>
+cd portfolio-core
+composer install
+        </pre>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+        <h3>Set Up Environment File</h3>
+        <pre>
+cp .env.example .env
+        </pre>
 
-## Learning Laravel
+        <h3>Configure Database</h3>
+        <p>Set up your database configuration in the <code>.env</code> file. Make sure to update the following lines:</p>
+        <pre>
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=portfolio_core
+DB_USERNAME=root
+DB_PASSWORD=
+        </pre>
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+        <h3>Generate Application Key</h3>
+        <pre>
+php artisan key:generate
+        </pre>
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+        <h3>Run Migrations</h3>
+        <pre>
+php artisan migrate
+        </pre>
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+        <h3>Start the Development Server</h3>
+        <pre>
+php artisan serve
+        </pre>
 
-## Laravel Sponsors
+        <p>Visit <a href="http://localhost:8000" target="_blank">http://localhost:8000</a> in your browser to see the project in action.</p>
+    </section>
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+    <section>
+        <h2>Usage</h2>
+        <p>Once the application is set up, you can customize your portfolio by editing the sections directly from the admin dashboard. Add or remove portfolio items, update your skills, and showcase your work.</p>
+    </section>
 
-### Premium Partners
+    <section>
+        <h2>Contributing</h2>
+        <p>We welcome contributions to improve this project. To contribute, please fork the repository, make your changes, and submit a pull request.</p>
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+        <h3>Steps to Contribute:</h3>
+        <ol>
+            <li>Fork the repository</li>
+            <li>Create a new branch (<code>git checkout -b feature/your-feature</code>)</li>
+            <li>Commit your changes (<code>git commit -am 'Add new feature'</code>)</li>
+            <li>Push to the branch (<code>git push origin feature/your-feature</code>)</li>
+            <li>Create a new Pull Request</li>
+        </ol>
+    </section>
 
-## Contributing
+    <section>
+        <h2>License</h2>
+        <p>This project is licensed under the MIT License - see the <a href="LICENSE">LICENSE</a> file for details.</p>
+    </section>
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+    <section>
+        <h2>Contact</h2>
+        <p>For any inquiries or support, please contact:</p>
+        <ul>
+            <li><strong>Your Name</strong></li>
+            <li>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></li>
+            <li>Website: <a href="https://yourwebsite.com" target="_blank">yourwebsite.com</a></li>
+        </ul>
+    </section>
