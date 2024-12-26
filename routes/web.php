@@ -9,15 +9,18 @@ use App\Http\Controllers\Admin\BlogPostController;
 //     return view('welcome');
 // });
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/about', [HomeController::class, 'about'])->name('about');
-Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+// Route::get('/',        [HomeController::class, 'index'])->name('home');
+// Route::get('/about',   [HomeController::class, 'about'])->name('about');
+// Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+// Define the contact.store route
+// Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
-// Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
-//     Route::get('/', function () {
-//         return view('admin.dashboard');
-//     })->name('dashboard');
-//     Route::resource('projects', ProjectController::class);
-//     Route::resource('blog-posts', BlogPostController::class);
-// });
+
+Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
+    Route::get('/', function () {
+        return view('admin.dashboard');
+    })->name('dashboard');
+    Route::resource('projects', ProjectController::class);
+    Route::resource('blog-posts', BlogPostController::class);
+});
 

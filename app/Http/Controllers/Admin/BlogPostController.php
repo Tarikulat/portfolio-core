@@ -1,19 +1,16 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use App\Models\BlogPost;
 use Illuminate\Http\Request;
 
 class BlogPostController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        $posts = BlogPost::all();
-        return view('admin.blog-posts.index', compact('posts'));
+        $blogPosts = BlogPost::all();
+        return view('admin.blog-posts.index', compact('blogPosts'));
     }
 
     public function create()
@@ -23,53 +20,43 @@ class BlogPostController extends Controller
 
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'title' => 'required|string|max:255',
+        $request->validate([
+            'title' => 'required|string',
             'content' => 'required|string',
         ]);
 
-        BlogPost::create($validated);
-        return redirect()->route('admin.blog-posts.index');
-    }
-    /**
-     * Show the form for creating a new resource.
-     */
-    
+        BlogPost::create($request->all());
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
+        return redirect()->route('admin.blog-posts.index')->with('success', 'Blog Post created successfully');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
+    public function show(BlogPost $blogPost)
     {
-        //
+        return view('admin.blog-posts.show', compact('blogPost'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+    public function edit(BlogPost $blogPost)
     {
-        //
+        return view('admin.blog-posts.edit', compact('blogPost'));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
+    public function update(Request $request, BlogPost $blogPost)
     {
-        //
+        $request->validate([
+            'title' => 'required|string',
+            'content' => 'required|string',
+        ]);
+
+        $blogPost->update($request->all());
+
+        return redirect()->route('admin.blog-posts.index')->with('success', 'Blog Post updated successfully');
+    }
+
+    public function destroy(BlogPost $blogPost)
+    {
+        $blogPost->delete();
+
+        return redirect()->route('admin.blog-posts.index')->with('success', 'Blog Post deleted successfully');
     }
 }
+
